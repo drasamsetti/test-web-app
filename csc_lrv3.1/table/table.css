@@ -1,0 +1,536 @@
+/*
+   Add the following to your CSS file should you wish the cursor to
+   "wait" while the script is processing the sort
+
+body.sort-active *
+        {
+        cursor:wait;
+        }
+*/
+
+table.sort
+        {
+        width: 99%;
+        padding: 0;
+        margin: 0 auto 1.5em auto;
+        border-left: 1px solid #C1DAD7;
+        border-collapse:collapse;
+        }
+
+table.theme-details
+        {
+        width: 99%;
+        padding: 0;
+        margin: 0 auto 1.5em auto;
+        border-left: 1px solid #C1DAD7;
+		border-right: 1px solid #C1DAD7;
+		border-bottom: 1px solid #C1DAD7;
+        border-collapse:collapse;
+        }
+tr.bottom
+{
+		border-bottom: 1px solid #C1DAD7;
+}
+.cs1
+        {
+        width:30em;
+        }
+.cs2
+        {
+        width:20em;
+        }
+.cs1 td,
+.cs2 td,
+#scientificNotation
+        {
+        text-align:right;
+        }
+		
+span.current
+{
+	font: italic 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	color: red;
+}
+caption
+        {
+        padding: 0 0 5px 0;
+        margin:0 auto;
+        width:auto;
+        font: italic 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+        text-align: right;
+        }
+th.sort
+        {
+        font: bold 10px/22px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+        color: #4f6b72;
+        border-right: 1px solid #C1DAD7;
+        border-bottom: 1px solid #C1DAD7;
+        border-top: 1px solid #C1DAD7;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-align: left;
+        padding: 8px 12px 4px 12px;
+        background: #CAE8EA url(bg_header_rep.jpg) repeat;
+        vertical-align:middle;
+        }
+		
+th.theme-details-l
+        {
+        font: bold 14px/22px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+        color: #4f6b72;
+        /*border-right: 1px solid #C1DAD7;*/
+		border-left: 1px solid #C1DAD7;
+        border-bottom: 1px solid #C1DAD7;
+        border-top: 1px solid #C1DAD7;
+        letter-spacing: 1px;
+        /*text-transform: uppercase;*/
+        text-align: left;
+        padding: 8px 12px 4px 12px;
+        background: #CAE8EA url(bg_header_rep.jpg) repeat;
+        vertical-align:middle;
+        }
+th.theme-details-r
+        {
+        font: bold 10px/22px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+        color: #4f6b72;
+        border-right: 1px solid #C1DAD7;
+		/*border-left: 1px solid #C1DAD7;*/
+        border-bottom: 1px solid #C1DAD7;
+        border-top: 1px solid #C1DAD7;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-align: right;
+        padding: 8px 12px 4px 12px;
+        background: #CAE8EA url(bg_header_rep.jpg) repeat;
+        vertical-align:middle;
+        }
+th.theme-details-m
+        {
+        font: bold 14px/22px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+        color: #4f6b72;
+        border-right: 1px solid #C1DAD7;
+		border-left: 1px solid #C1DAD7;
+        border-bottom: 1px solid #C1DAD7;
+        border-top: 1px solid #C1DAD7;
+        letter-spacing: 1px;
+        /*text-transform: uppercase;*/
+        text-align: center;
+        padding: 8px 12px 4px 12px;
+        background: #CAE8EA url(bg_header_rep.jpg) repeat;
+        vertical-align:middle;
+        }
+		
+td.total
+        {
+        border-top: 0;
+        border-left: 0;
+        border-right: 1px solid #C1DAD7;
+        background: none;
+        text-align:right;
+        font-weight:bold;
+        text-transform:uppercase;
+        letter-spacing:1px;
+        }
+th.sortable,
+th.sortable-text,
+th.sortable-date,
+th.sortable-keep,
+th.sortable-date-dmy,
+th.sortable-numeric,
+th.sortable-currency,
+th.sortable-sortByTwelveHourTimestamp,
+th.sortable-sortIPAddress,
+th.sortable-sortEnglishLonghandDateFormat,
+th.sortable-sortScientificNotation,
+th.sortable-sortImage,
+th.sortable-sortFileSize,
+th.sortable-sortAlphaNumeric,
+th.sortable-sortEnglishDateTime
+
+        {
+        cursor:pointer;
+        background: #CAE8EA url(bg_header_sortable.jpg) no-repeat;
+        padding: 8px 12px 4px 16px;
+        }
+th.forwardSort
+        {
+        background:#CAE8EA url(bg_header_down.jpg) no-repeat 0 0;
+        }
+th.reverseSort
+        {
+        background:#CAE8EA url(bg_header_up.jpg) no-repeat 0 0;
+        }
+table thead th.forwardSort a,
+table thead th.reverseSort a
+        {
+        color:#000;
+        text-decoration:none;
+        }
+/*
+These styles should be added when very long tables are expected
+th.sort-active
+        {
+        background:#CAE8EA url(table/bg_header_sorting.jpg) no-repeat 0 0;
+        cursor:wait;
+        }
+th.sort-active a
+        {
+        color:#a80000 !important;
+        cursor:wait;
+        }
+*/
+th a
+        {
+        text-decoration:none;
+        color: #4f6b72;
+        background:transparent;
+        }
+td a
+        {
+        text-decoration:none;
+        color:#4f6b72;
+        background:transparent;
+        }
+td img
+        {
+        margin:0 auto;
+        /*border:3px solid #ddd;*/
+        }
+td a:hover
+        {
+        color:#000;
+        border-bottom:1px dotted #000;
+        background:transparent;
+        }
+table.sort td
+        {
+        font: normal 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+        border-right: 1px solid #C1DAD7;
+        border-bottom: 1px solid #C1DAD7;
+        padding: 6px 12px 6px 12px;
+        color: #4f6b72;
+        }
+table.main td
+        {
+        font: normal 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+        /*border-right: 1px solid #C1DAD7;
+		border-bottom: 1px solid #C1DAD7;*/
+        /*padding: 6px 12px 6px 12px;*/
+        color: #4f6b72;
+     }
+table.theme-details td
+{
+	font: normal 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+    padding: 6px 12px 6px 12px;
+    color: #4f6b72;
+}
+td.lft
+        {
+        text-align:left;
+        }
+tr.alt
+        {
+        background: #F5FAFA;
+        color: #797268;
+        }
+tr.alt-l
+        {
+        background: #F5FAFA;
+        color: #797268;
+     }
+tr.alt-l td
+{
+	text-align:left;
+}
+
+tr.alt-l td.center
+{
+	text-align:center;
+}
+
+/* Poor old Internet Explorer 6 has a bug that means we can't use background images for the table rows
+   as it trys to download the image each and every time that it is used (which means a 1000 row table
+   will produce 1000 http requests for the image in question) */
+table.sort tr[class="alt"] td
+        {
+        background: #F5FAFA url(td_alt.jpg) no-repeat;
+        }
+table.sort td[class~="alt"]
+        {
+        background: #edf3f3 url(col_alt.jpg) no-repeat !important;
+        }
+/* Poor old Internet Explorer won't see the next two rules either as it doesn't get :first-child */
+table.sort tbody tr.alt td:first-child
+        {
+        background: #F5FAFA url(bullet2.gif) no-repeat;
+        font-weight:bold;
+        }
+table.sort tbody tr td:first-child
+        {
+        background: #fff url(bullet1.gif) no-repeat;
+        font-weight:bold;
+        }
+/* Image free rules for Internet Explorer < 7 */
+* html tr.alt td
+        {
+        background-color:#F5FAFA;
+        }
+* html tr td.alt,
+* html tr.alt td.alt
+        {
+        background-color:#edf3f3;
+        }
+
+/*----Newly added styles-----Krishna-------*/
+.laastable
+{
+border-style:solid;
+border-width:1px;
+border-color:#5cacee;
+}
+
+.laasfieldset
+{
+border-style:solid;
+border-width:3px;
+border-color:#5cacee;
+noshade:noshade;
+align:center;
+border-radius: 10px;
+width:650px;
+height:300px
+}
+
+.laaslegend
+{
+color:#000000;
+padding-left:1px;
+padding-right:1px;
+font-size:14px;
+font-weight:bold;
+}
+
+.laasheaderdiv 
+{
+	color:#5cacee;
+	font-size:24px;
+	font-weight:bold;
+    border: 0px solid #5cacee;
+    padding: 1px 4px; 
+    border-radius: 5px;
+	text-align:left;
+}
+
+.laasmenudiv 
+{
+    border: 2px solid #5cacee;
+    padding: 1px 4px; 
+    border-radius: 5px;
+}
+
+.laascatdiv 
+{
+    border: 2px solid #5cacee;
+    padding: 1px 4px; 
+    border-radius: 15px;
+}
+
+.laasprdiv 
+{
+    border: 2px solid #5cacee;
+    padding: 10px 40px; 
+    border-radius: 15px;
+}
+
+.laasasidediv 
+{
+    border: 2px solid #BDBDBD;
+    padding: 10px 40px; 
+    border-radius: 15px;
+}
+.laascontributediv
+{
+    border: 1px solid #5cacee;
+    padding: 10px 40px; 
+    border-radius: 5px;
+}
+.cscprsummary
+{
+	color:red;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: left;
+	height: 100px;
+	vertical-align:top;
+}
+
+.csclrhome
+{
+	color:black;
+	font-size: 16px;
+	font-weight: normal;
+	text-align: left;
+	height: 100px;
+	vertical-align:top;
+}
+
+.cscprtext
+{
+	color:black;
+	font-size: 11px;
+	font-style: italic;
+}
+
+.cscprstatus
+{
+	color:black;
+	font-size: 10px;
+	font-weight: bold;
+}
+
+.cscprstatustext
+{
+	color:blue;
+	font-size: 10px;
+	font-style: normal;
+}
+
+p, td
+{
+font-family:"Calibri";
+font-size:13px;
+}
+th
+{
+background-color:#6E6E6E;
+border: 1px solid #6E6E6E;
+color:#FFFFFF;
+font-family:"Calibri";
+font-size:14px;
+}
+#skillview
+{
+border: 2px solid #BDBDBD;
+border-collapse:collapse;
+}
+#skillview td
+{
+background-color:#BDBDBD;
+border: 1px solid #BDBDBD;
+padding:3px 3px 2px 3px;
+}
+#skillview tr.alt td
+{
+background-color:#E6E6E6;
+}
+
+.controltext
+{
+  font-family: Verdana, Geneva, sans-serif;
+  font-size:1.0em;
+}
+
+.viewcontroltext
+{
+  font-family: Verdana, Geneva, sans-serif;
+  font-size:1.0em;
+  color:grey;
+}
+
+/*-------For DropDown Menu Purpose Starts here-------*/
+
+.jqueryslidemenu{
+font: bold 12px Verdana;
+background: #414141;
+width: 100%;
+}
+
+.jqueryslidemenu ul{
+margin: 0;
+padding: 0;
+list-style-type: none;
+}
+
+/*Top level list items*/
+.jqueryslidemenu ul li{
+position: relative;
+display: inline;
+float: left;
+}
+
+/*Top level menu link items style*/
+.jqueryslidemenu ul li a{
+display: block;
+background: #414141; /*background of tabs (default state)*/
+color: white;
+padding: 8px 10px;
+border-right: 1px solid #778;
+color: #2d2b2b;
+text-decoration: none;
+}
+
+* html .jqueryslidemenu ul li a{ /*IE6 hack to get sub menu links to behave correctly*/
+display: inline-block;
+}
+
+.jqueryslidemenu ul li a:link, .jqueryslidemenu ul li a:visited{
+color: white;
+}
+
+.jqueryslidemenu ul li a:hover{
+background: black; /*tab link background during hover state*/
+color: white;
+}
+	
+/*1st sub level menu*/
+.jqueryslidemenu ul li ul{
+position: absolute;
+left: 0;
+display: block;
+visibility: hidden;
+}
+
+/*Sub level menu list items (undo style from Top level List Items)*/
+.jqueryslidemenu ul li ul li{
+display: list-item;
+float: none;
+}
+
+/*All subsequent sub menu levels vertical offset after 1st level sub menu */
+.jqueryslidemenu ul li ul li ul{
+top: 0;
+}
+
+/* Sub level menu links style */
+.jqueryslidemenu ul li ul li a{
+font: normal 13px Verdana;
+width: 160px; /*width of sub menus*/
+padding: 5px;
+margin: 0;
+border-top-width: 0;
+border-bottom: 1px solid gray;
+}
+
+.jqueryslidemenuz ul li ul li a:hover{ /*sub menus hover style*/
+background: #eff9ff;
+color: black;
+}
+
+/* ######### CSS classes applied to down and right arrow images  ######### */
+
+.downarrowclass{
+position: absolute;
+top: 12px;
+right: 7px;
+}
+
+.rightarrowclass{
+position: absolute;
+top: 6px;
+right: 5px;
+}
+
+/*-----DD Menu Ends here*/
+
+ #myForm .note { display:none; }
+ #myForm fieldset { border:0 }

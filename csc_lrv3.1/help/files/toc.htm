@@ -1,0 +1,306 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+  <head>
+    <meta name="generator" content="HelpNDoc Freeware Edition">
+    <link rel="StyleSheet" href="toc.css" type="text/css"/>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.cookie.js"></script>
+    <script type="text/javascript" src="jquery.treeview.min.js"></script>
+    <script type="text/javascript" src="jquery.rich-array-hnd.js"></script>
+    <script type="text/javascript" src="searchdata.js"></script>
+    <script type="text/javascript"><!--
+      $(document).ready(function(){
+        $("#toc").treeview(
+        )
+        $("#keywords").treeview({collapsed: true});
+        $(document.body).click(function(e){var $target = $(e.target); if($target.is("a")) return; hidePopup();});
+        $(function(){var tabContainers = $("div.tabs > div");tabContainers.hide().filter(":first").show();$("div.tabs ul.tabNavigation a").click(function(){tabContainers.hide();
+        tabContainers.filter(this.hash).show();$("div.tabs ul.tabNavigation a").removeClass("selected");$(this).addClass("selected");return false;}).filter(":first").click();});
+      });
+      function hidePopup() {if($("#popupMenu")) $("#popupMenu").remove();}
+      function showPopup(oSender,aLinks){hidePopup();if (aLinks==0) return true;var oParentDiv=document.createElement("DIV");oParentDiv.id="popupMenu";var oLink,oBr=null;
+      for (var nCnt=0;nCnt<aLinks.length;nCnt++){oLink=document.createElement("A");oLink.innerHTML=aLinks[nCnt][0];oLink.href=aLinks[nCnt][1];oLink.target="FrameMain";oLink.onclick=hidePopup;
+      oParentDiv.appendChild(oLink);if (nCnt<aLinks.length-1){oBr=document.createElement("BR");oParentDiv.appendChild(oBr);}}document.body.appendChild(oParentDiv);var pos=$(oSender).offset(); 
+      var height=$(oSender).height();$(oParentDiv).css({"backgroundColor": "#EEEEEE","border": "1px solid #999999","position": "absolute","left": (pos.left+20)+"px","top": (pos.top+height+5)+"px",
+      "padding": 5+"px"});$(oParentDiv).show();return false;}
+      function performSearch(){sValue = $("#search_value").val().toLowerCase();var aValues = sValue.split(" ");var aFinalResults = [];for (var nValue = 0; nValue < aValues.length; nValue++){if (aValues[nValue] == "") continue;var aResults = oSearchData[aValues[nValue]];if (aResults && aResults.length > 0){if (nValue == 0) aFinalResults = aResults
+else aFinalResults = jQuery.richArray.intersect(aFinalResults, aResults);}else{aFinalResults = [];break;}}if (aFinalResults.length > 0){$("#search_results").html("Found " + aFinalResults.length + " results");for (var nCnt = 0; nCnt < aFinalResults.length; nCnt++){var oElmt = document.createElement("DIV");oElmt.innerHTML = "<a href='" + aFinalResults[nCnt][0] + "?search=" + sValue + "' target='FrameMain'>" + aFinalResults[nCnt][1] + "</a> (" + aFinalResults[nCnt][2] + ")<br/>";$(oElmt).appendTo($("#search_results"));}}else{$("#search_results").html("No result found");}}
+    //--></script>
+    <style type="text/css">
+      ul.tabNavigation{list-style: none;margin: 0;padding: 10px;}ul.tabNavigation li{display: inline;}ul.tabNavigation li A{padding: 3px 5px;background-color: #ccc;color: #000;
+      text-decoration: none;}ul.tabNavigation li A.selected,ul.tabNavigation li A:hover{background-color: #333;color: #fff;}ul.tabNavigation li A:focus{outline: 0;}
+      </style>
+  </head>
+
+  <body>
+  
+    <div class="tabs">
+      <ul class="tabNavigation">
+        <li><a href="#tab_toc">Contents</a></li>
+        <li><a href="#tab_keywords">Index</a></li>
+        <li><a href="#tab_search">Search</a></li>
+      </ul>
+      <div id="tab_toc">
+        <ul id="toc" class="filetree">
+          
+          <li>
+            <a href="Introduction.html" class="folder" target="FrameMain">Introduction</a>
+            <ul>
+              
+              <li>
+                <a href="Welcome.html" class="file" target="FrameMain">Need for Idea Generation Tool</a>
+              </li>
+              
+              <li>
+                <a href="Features.html" class="file" target="FrameMain">Features</a>
+              </li>
+              
+              <li>
+                <a href="IdeationCategories.html" class="file" target="FrameMain">Ideation Categories</a>
+              </li>
+              
+              <li>
+                <a href="Roles.html" class="file" target="FrameMain">Roles</a>
+              </li>
+            </ul>
+          </li>
+          
+          <li>
+            <a href="ProcessFlow.html" class="folder" target="FrameMain">Process Flow</a>
+            <ul>
+              
+              <li>
+                <a href="LoginScreen.html" class="file" target="FrameMain">Log in Screen</a>
+              </li>
+              
+              <li>
+                <a href="AccountDashboard.html" class="file" target="FrameMain">Account Dashboard</a>
+              </li>
+              
+              <li>
+                <a href="NewUserRegistration.html" class="file" target="FrameMain">New User Registration</a>
+              </li>
+              
+              <li>
+                <a href="PublicDashboard.html" class="file" target="FrameMain">Public Dashboard</a>
+              </li>
+              
+              <li>
+                <a href="CoordinatorsTasks.html" class="folder" target="FrameMain">Coordinator's Tasks</a>
+                <ul>
+                  
+                  <li>
+                    <a href="Creatingatheme.html" class="file" target="FrameMain">Creating a theme</a>
+                  </li>
+                  
+                  <li>
+                    <a href="Closingatheme.html" class="file" target="FrameMain">Closing a theme</a>
+                  </li>
+                  
+                  <li>
+                    <a href="Postingupdatesonaclosedtheme.html" class="file" target="FrameMain">Posting updates on a closed theme</a>
+                  </li>
+                  
+                  <li>
+                    <a href="Convertanunsolicitedideaintoth.html" class="file" target="FrameMain">Convert an unsolicited idea into theme</a>
+                  </li>
+                </ul>
+              </li>
+              
+              <li>
+                <a href="ReviewersTasks.html" class="folder" target="FrameMain">Reviewer's Tasks</a>
+                <ul>
+                  
+                  <li>
+                    <a href="RatingIdeas.html" class="file" target="FrameMain">Rating Ideas</a>
+                  </li>
+                </ul>
+              </li>
+              
+              <li>
+                <a href="UsersTasks.html" class="folder" target="FrameMain">User's Tasks</a>
+                <ul>
+                  
+                  <li>
+                    <a href="PostingIdeasonatheme.html" class="file" target="FrameMain">Posting Ideas on a theme</a>
+                  </li>
+                  
+                  <li>
+                    <a href="SubmittingUnsolicitedIdea.html" class="file" target="FrameMain">Submitting Unsolicited Idea</a>
+                  </li>
+                </ul>
+              </li>
+              
+              <li>
+                <a href="Administratorstasks.html" class="folder" target="FrameMain">Administrator's tasks</a>
+                <ul>
+                  
+                  <li>
+                    <a href="ManageCategories.html" class="file" target="FrameMain">Manage Categories</a>
+                  </li>
+                  
+                  <li>
+                    <a href="ManageProjects.html" class="file" target="FrameMain">Manage Projects</a>
+                  </li>
+                  
+                  <li>
+                    <a href="ManageAccounts.html" class="file" target="FrameMain">Manage Accounts</a>
+                  </li>
+                  
+                  <li>
+                    <a href="ManageUserRights.html" class="file" target="FrameMain">Manage User Rights</a>
+                  </li>
+                </ul>
+              </li>
+              
+              <li>
+                <a href="OtherTasks.html" class="folder" target="FrameMain">Other Tasks</a>
+                <ul>
+                  
+                  <li>
+                    <a href="GeneratingDynamicGraphicalRepo.html" class="file" target="FrameMain">Generating Dynamic Graphical Reports</a>
+                  </li>
+                  
+                  <li>
+                    <a href="ExtensiveSearch.html" class="file" target="FrameMain">Extensive Search</a>
+                  </li>
+                  
+                  <li>
+                    <a href="ExcelReports.html" class="file" target="FrameMain">Excel Reports</a>
+                  </li>
+                </ul>
+              </li>
+              
+              <li>
+                <a href="AccountAdministratorsTasks.html" class="folder" target="FrameMain">Account Administrator's Tasks</a>
+                <ul>
+                  
+                  <li>
+                    <a href="ApproveNewUser.html" class="file" target="FrameMain">Manage New Users</a>
+                  </li>
+                </li>
+              </li>
+          </ul>
+        </div>
+        
+        <div id="tab_keywords">
+          <ul id="keywords" class="filetree">
+            
+            <li>
+              <a href="Creatingatheme.html" target="FrameMain" class="file" onclick="hidePopup();">account</a>
+            </li>
+            
+            <li>
+              <a href="Roles.html" target="FrameMain" class="file" onclick="hidePopup();">Account Administrator</a>
+            </li>
+            
+            <li>
+              <a href="Roles.html" target="FrameMain" class="file" onclick="hidePopup();">Administrator</a>
+            </li>
+            
+            <li>
+              <a href="Roles.html" target="FrameMain" class="file" onclick="hidePopup();">Coordinator</a>
+            </li>
+            
+            <li>
+              <a href="GeneratingDynamicGraphicalRepo.html" target="FrameMain" class="file" onclick="hidePopup();">Dashboards</a>
+            </li>
+            
+            <li>
+              <a href="GeneratingDynamicGraphicalRepo.html" target="FrameMain" class="file" onclick="hidePopup();">Dynamic graphical reports</a>
+            </li>
+            
+            <li>
+              <a href="ExcelReports.html" target="FrameMain" class="file" onclick="hidePopup();">Excel Reports</a>
+            </li>
+            
+            <li>
+              <a href="ExtensiveSearch.html" target="FrameMain" class="file" onclick="hidePopup();">Extensive Search</a>
+            </li>
+            
+            <li>
+              <a href="Features.html" target="FrameMain" class="file" onclick="hidePopup();">Features</a>
+            </li>
+            
+            </li>
+            
+            </li>
+            
+            <li>
+              <a href="Welcome.html" target="FrameMain" class="file" onclick="hidePopup();">Introduction</a>
+            </li>
+            
+            <li>
+              <a href="LoginScreen.html" target="FrameMain" class="file" onclick="hidePopup();">Login Screen</a>
+            </li>
+            
+            <li>
+              <a href="ManageAccounts.html" target="FrameMain" class="file" onclick="hidePopup();">Manage Accounts</a>
+            </li>
+            
+            <li>
+              <a href="ManageUserRights.html" target="FrameMain" class="file" onclick="hidePopup();">Manage User Rights</a>
+            </li>
+            
+            <li>
+              <a href="Welcome.html" target="FrameMain" class="file" onclick="hidePopup();">Need for Idea Generation Tool</a>
+            </li>
+            
+            <li>
+              <a href="LoginScreen.html" target="FrameMain" class="file" onclick="hidePopup();">New User Registration</a>
+            </li>
+            
+            <li>
+              <a href="PostingIdeasonatheme.html" target="FrameMain" class="file" onclick="hidePopup();">Posting Ideas on a theme</a>
+            </li>
+            
+            <li>
+              <a href="Postingupdatesonaclosedtheme.html" target="FrameMain" class="file" onclick="hidePopup();">Posting Updates</a>
+            </li>
+            
+            <li>
+              <a href="ManageProjects.html" target="FrameMain" class="file" onclick="hidePopup();">Projects</a>
+            </li>
+            
+            <li>
+              <a href="RatingIdeas.html" target="FrameMain" class="file" onclick="hidePopup();">Rating</a>
+            </li>
+            
+            <li>
+              <a href="RatingIdeas.html" target="FrameMain" class="file" onclick="hidePopup();">Rating Ideas</a>
+            </li>
+            
+            <li>
+              <a href="Roles.html" target="FrameMain" class="file" onclick="hidePopup();">Reviewer</a>
+            </li>
+            
+            <li>
+              <a href="Roles.html" target="FrameMain" class="file" onclick="hidePopup();">Roles</a>
+            </li>
+            
+            </li>
+            
+            </li>
+            
+            </li>
+            
+            </li>
+            
+            <li>
+              <a href="Roles.html" target="FrameMain" class="file" onclick="hidePopup();">User</a>
+            </li>
+            
+            <li>
+              <a href="ManageUserRights.html" target="FrameMain" class="file" onclick="hidePopup();">User Rights</a>
+            </li>
+        </ul>
+      </div>
+      <div id="tab_search" style="padding:10px">
+        Search: <form onsubmit="performSearch(); return false;"><input id="search_value"></input><input type="submit" value="search"/></form><div id="search_results"></div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
